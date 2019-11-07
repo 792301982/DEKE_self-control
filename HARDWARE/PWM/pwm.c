@@ -144,8 +144,8 @@ void TIM4_PWM_Init(u32 arr,u32 psc)
 
 void PWM_Init()
 {
-	TIM3_PWM_Init(1020-1,84-1);		//84M/84=1Mhz的计数频率,重装载值500，所以PWM频率为 1M/250=4Khz. 
-	TIM4_PWM_Init(1020-1,84-1);
+	TIM3_PWM_Init(1020-1,4-1);		//84M/84=1Mhz的计数频率,重装载值500，所以PWM频率为 1M/250=4Khz. 
+	TIM4_PWM_Init(1020-1,4-1);
 	init_servos(1);  //说明：伺服电机开关， 0 为关， 1 为开
 }
 

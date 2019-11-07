@@ -13,7 +13,10 @@
 #define AI analog
 #define DI digital
 
-extern void AD_Detection(void)
+u8 digital(u8);
+u16 analog(u8);
+
+void AD_Detection(void)
 {
 	
 	u8 key_temp = 1;
@@ -57,10 +60,10 @@ extern void AD_Detection(void)
 			
 			display_str(2,1,"A12=");
 			display_str(4,1,"A13=");
-			display_str(6,1,"D1=");
-			display_str(2,71,"D2=");
-			display_str(4,71,"D3=");
-			display_str(6,71,"D4=");
+			display_str(6,1,"A14=");
+			display_str(2,66,"A15=");
+			display_str(4,71,"D1=");
+			display_str(6,71,"D2=");
 			i=0;
 		}
 		
@@ -70,10 +73,8 @@ extern void AD_Detection(void)
 		{
 			if(key_temp==KeyConfirm_PRES)
 			{
-				display_DI(6,26,digital(1));
-				display_DI(2,96,digital(2));
-				display_DI(4,96,digital(3));
-				display_DI(6,96,digital(4));
+				display_DI(4,96,digital(1));
+				display_DI(6,96,digital(2));
 			}
 		}
 		if(!j)
@@ -102,10 +103,10 @@ extern void AD_Detection(void)
 			{
 				display_AI(2,31,analog(12));	
 				display_AI(4,31,analog(13));	
-				display_DI(6,26,digital(1));
-				display_DI(2,96,digital(2));
-				display_DI(4,96,digital(3));
-				display_DI(6,96,digital(4));
+				display_AI(6,31,analog(14));
+				display_AI(2,96,analog(15));
+				display_DI(4,96,digital(1));
+				display_DI(6,96,digital(2));
 			}
 		}
 		else if(key_temp==KeyOut_PRES)	break;

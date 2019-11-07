@@ -9,7 +9,7 @@ void BEEP_Init(void);//初始化
 
 //函数： 说明：发出一个 500Hz， 0.3s 的声音
 void beep(void);
-void beepoff();
+void beepoff(void);
 			
 #endif
 

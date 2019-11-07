@@ -3,7 +3,7 @@
 ..\obj\ysy.o: init.h
 ..\obj\ysy.o: stm32f4xx.h
 ..\obj\ysy.o: ..\CORE\core_cm4.h
-..\obj\ysy.o: H:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+..\obj\ysy.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 ..\obj\ysy.o: ..\CORE\core_cmInstr.h
 ..\obj\ysy.o: ..\CORE\core_cmFunc.h
 ..\obj\ysy.o: ..\CORE\core_cm4_simd.h
@@ -39,7 +39,7 @@
 ..\obj\ysy.o: ..\SYSTEM\sys\sys.h
 ..\obj\ysy.o: ..\SYSTEM\delay\delay.h
 ..\obj\ysy.o: ..\SYSTEM\usart\usart.h
-..\obj\ysy.o: H:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+..\obj\ysy.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
 ..\obj\ysy.o: ..\HARDWARE\LED\led.h
 ..\obj\ysy.o: ..\HARDWARE\BEEP\beep.h
 ..\obj\ysy.o: ..\HARDWARE\KEY\key.h
@@ -48,3 +48,5 @@
 ..\obj\ysy.o: ..\HARDWARE\SENSOR\sensor.h
 ..\obj\ysy.o: ..\HARDWARE\TIMER\timer.h
 ..\obj\ysy.o: ..\HARDWARE\SERVOR_BC\servor_bc.h
+..\obj\ysy.o: edge.h
+..\obj\ysy.o: init.h

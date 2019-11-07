@@ -2,7 +2,7 @@
 ..\obj\robotinit.o: init.h
 ..\obj\robotinit.o: stm32f4xx.h
 ..\obj\robotinit.o: ..\CORE\core_cm4.h
-..\obj\robotinit.o: H:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+..\obj\robotinit.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 ..\obj\robotinit.o: ..\CORE\core_cmInstr.h
 ..\obj\robotinit.o: ..\CORE\core_cmFunc.h
 ..\obj\robotinit.o: ..\CORE\core_cm4_simd.h
@@ -38,7 +38,7 @@
 ..\obj\robotinit.o: ..\SYSTEM\sys\sys.h
 ..\obj\robotinit.o: ..\SYSTEM\delay\delay.h
 ..\obj\robotinit.o: ..\SYSTEM\usart\usart.h
-..\obj\robotinit.o: H:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+..\obj\robotinit.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
 ..\obj\robotinit.o: ..\HARDWARE\LED\led.h
 ..\obj\robotinit.o: ..\HARDWARE\BEEP\beep.h
 ..\obj\robotinit.o: ..\HARDWARE\KEY\key.h

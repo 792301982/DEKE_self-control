@@ -3,7 +3,7 @@
 ..\obj\ad_detection.o: ..\SYSTEM\sys\sys.h
 ..\obj\ad_detection.o: ..\USER\stm32f4xx.h
 ..\obj\ad_detection.o: ..\CORE\core_cm4.h
-..\obj\ad_detection.o: H:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+..\obj\ad_detection.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 ..\obj\ad_detection.o: ..\CORE\core_cmInstr.h
 ..\obj\ad_detection.o: ..\CORE\core_cmFunc.h
 ..\obj\ad_detection.o: ..\CORE\core_cm4_simd.h
@@ -39,6 +39,6 @@
 ..\obj\ad_detection.o: ..\SYSTEM\delay\delay.h
 ..\obj\ad_detection.o: ..\HARDWARE\BEEP\beep.h
 ..\obj\ad_detection.o: ..\HARDWARE\LCD\lcd.h
-..\obj\ad_detection.o: H:\Keil_v5\ARM\ARMCC\Bin\..\include\stdarg.h
-..\obj\ad_detection.o: H:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+..\obj\ad_detection.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdarg.h
+..\obj\ad_detection.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
 ..\obj\ad_detection.o: ..\HARDWARE\LCD\codelib.h

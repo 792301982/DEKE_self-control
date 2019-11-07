@@ -3,7 +3,7 @@
 ..\obj\compass_nst.o: ..\SYSTEM\sys\sys.h
 ..\obj\compass_nst.o: ..\USER\stm32f4xx.h
 ..\obj\compass_nst.o: ..\CORE\core_cm4.h
-..\obj\compass_nst.o: H:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+..\obj\compass_nst.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 ..\obj\compass_nst.o: ..\CORE\core_cmInstr.h
 ..\obj\compass_nst.o: ..\CORE\core_cmFunc.h
 ..\obj\compass_nst.o: ..\CORE\core_cm4_simd.h

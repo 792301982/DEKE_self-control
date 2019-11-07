@@ -1,4 +1,5 @@
 #include "init.h"
+#include "edge.h"
 
 #define AI 							analog
 #define DI							digital
@@ -19,5 +20,5 @@ int analog_scan_far(void);//测距记录 最远传感器
 void touch_sensor(void);//触摸开关
 void test(void);//测试模式总函数
 int select_high(void);//掉台检测
-void find_single();
-int Find_Taizi();
+void find_single(void);
+int Find_Taizi(void);

@@ -1,9 +1,23 @@
 #include "ysy.h"//注释见头文件
+
+
 # define front_get			analog_scan_close()==2||analog_scan_close()==3
 # define back_get				analog_scan_close()==7||analog_scan_close()==8
 
+extern void AD_Detection(void);
 void GoodMoto(int lspeed,int rspeed);
-extern int Rs,Ls;
+
+extern int Rs,
+					 Ls,
+					 attack_speed,
+           normal_speed,
+	         back_speed;
+
+extern u8 Key;
+extern u8 Key_Temp;
+
+
+
 
 void speed_dispaly(void)
 {
@@ -21,7 +35,7 @@ int abs(int a,int b)//差的绝对值
 		return b-a;
 }
 
-int Touch(void)//触摸AD转换
+int Touch()//触摸AD转换
 {
 	if(AI(12)>2000)
 	{
@@ -30,28 +44,100 @@ int Touch(void)//触摸AD转换
 		if(AI(12)>2000)
 		{
 			led_off();
-			return 1;
 		}
+		return 1;
 	}
 	else return 0;
 }
 
+
+void set_speed()
+{
+			Key = KEY_Scan(0);
+			Key_Temp = Key;
+	    Key_Temp=5;
+			while(1)
+			{
+				ClearScreen();
+				ShowStr(0,1,"攻击速度"); ShowStr(0,60,"*");	ShowAI (0,66,attack_speed);
+				delay_ms(50);
+				
+					Key = KEY_Scan(0);
+					if(Key != 0) Key_Temp = Key;
+
+					if(Key_Temp==2)             //speed--
+					{
+						attack_speed-=50;
+						Key_Temp=0;
+					}
+					if(Key_Temp==3)             //speed++
+					{
+						attack_speed+=50;
+						Key_Temp=0;
+					}
+					if(Key_Temp==4)
+					{
+						Key_Temp=5;
+						while(1){
+						ClearScreen();
+						ShowStr(2,1,"巡台速度"); ShowStr(0,60,"*");	ShowAI (2,66,normal_speed);
+						delay_ms(50);
+						
+						Key = KEY_Scan(0);
+						if(Key != 0) Key_Temp = Key;
+						if(Key_Temp==2)             //speed--
+						{
+							normal_speed-=50;
+							Key_Temp=0;
+						}
+						if(Key_Temp==3)             //speed++
+						{
+							normal_speed+=50;
+							Key_Temp=0;
+						}
+						if(Key_Temp==4)             //speed++
+						{
+							while(1)
+							{
+								Key_Temp=5;
+								ClearScreen();
+								ShowStr(4,1,"上台速度"); ShowStr(0,60,"*");	ShowAI (4,66,-back_speed);
+								delay_ms(50);
+								Key = KEY_Scan(0);
+								if(Key != 0) Key_Temp = Key;
+								if(Key_Temp==2)             //speed--
+								{
+									back_speed-=50;
+									Key_Temp=0;
+								}
+								if(Key_Temp==3)             //speed++
+								{
+									back_speed+=50;
+									Key_Temp=0;
+								}
+								if(Key_Temp==1)             //go
+								{
+									break;
+								}
+							}
+							break;
+						}
+					}
+						break;
+						
+					}
+}
+			}
+
 void up_stage(void)//上台阶段
 {
-	ClearScreen();
-	ShowStr(2,5,"Stand By");
-	delay_ms(1000);
 	ClearScreen();
 	ShowStr(2,5,"上台");
 	{
 		GoodMoto(-900,-900);
 		delay_ms(1000);
-		GoodMoto(0,0);
-		delay_ms(100);
 		GoodMoto(-700,700);
 		delay_ms(400);
-		GoodMoto(400,400);
-		delay_ms(100);
 	}
 }
 
@@ -181,7 +267,7 @@ void test(void)//测试函数
 				end:
 				Key=0;
 				break;
-				ClearScreen();
+				//ClearScreen();
 			}
 		}
 }

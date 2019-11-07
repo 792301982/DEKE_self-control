@@ -12,6 +12,7 @@
 
 # define A_S_C			0//analog_scan_close()					//ÓöµÐ
 
+void GoodMoto(int,int);
 void back()
 {
 	reset_time();

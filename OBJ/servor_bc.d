@@ -3,7 +3,7 @@
 ..\obj\servor_bc.o: ..\SYSTEM\sys\sys.h
 ..\obj\servor_bc.o: ..\USER\stm32f4xx.h
 ..\obj\servor_bc.o: ..\CORE\core_cm4.h
-..\obj\servor_bc.o: H:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+..\obj\servor_bc.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 ..\obj\servor_bc.o: ..\CORE\core_cmInstr.h
 ..\obj\servor_bc.o: ..\CORE\core_cmFunc.h
 ..\obj\servor_bc.o: ..\CORE\core_cm4_simd.h
@@ -38,4 +38,4 @@
 ..\obj\servor_bc.o: ..\FWLIB\inc\stm32f4xx_fsmc.h
 ..\obj\servor_bc.o: ..\SYSTEM\delay\delay.h
 ..\obj\servor_bc.o: ..\SYSTEM\usart\usart.h
-..\obj\servor_bc.o: H:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+..\obj\servor_bc.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h

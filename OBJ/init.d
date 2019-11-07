@@ -2,7 +2,7 @@
 ..\obj\init.o: init.h
 ..\obj\init.o: stm32f4xx.h
 ..\obj\init.o: ..\CORE\core_cm4.h
-..\obj\init.o: H:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+..\obj\init.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 ..\obj\init.o: ..\CORE\core_cmInstr.h
 ..\obj\init.o: ..\CORE\core_cmFunc.h
 ..\obj\init.o: ..\CORE\core_cm4_simd.h
@@ -38,7 +38,7 @@
 ..\obj\init.o: ..\SYSTEM\sys\sys.h
 ..\obj\init.o: ..\SYSTEM\delay\delay.h
 ..\obj\init.o: ..\SYSTEM\usart\usart.h
-..\obj\init.o: H:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+..\obj\init.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
 ..\obj\init.o: ..\HARDWARE\LED\led.h
 ..\obj\init.o: ..\HARDWARE\BEEP\beep.h
 ..\obj\init.o: ..\HARDWARE\KEY\key.h

@@ -3,7 +3,7 @@
 ..\obj\sensor.o: ..\SYSTEM\sys\sys.h
 ..\obj\sensor.o: ..\USER\stm32f4xx.h
 ..\obj\sensor.o: ..\CORE\core_cm4.h
-..\obj\sensor.o: H:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+..\obj\sensor.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 ..\obj\sensor.o: ..\CORE\core_cmInstr.h
 ..\obj\sensor.o: ..\CORE\core_cmFunc.h
 ..\obj\sensor.o: ..\CORE\core_cm4_simd.h

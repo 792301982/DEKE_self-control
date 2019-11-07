@@ -3,65 +3,79 @@
 <pre>
 <h1>礦ision Build Log</h1>
 <h2>Tool Versions:</h2>
-IDE-Version: μVision V5.15
-Copyright (C) 2015 ARM Ltd and ARM Germany GmbH. All rights reserved.
-License Information: 1 Faker, 1, LIC=----
+IDE-Version: μVision V5.25.3.0
+Copyright (C) 2018 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: Yang Ning, Hebiace, LIC=----
  
 Tool Versions:
-Toolchain:       MDK-Lite  Version: 5.15.0
+Toolchain:       MDK-Lite  Version: 5.18
 Toolchain Path:  C:\Keil_v5\ARM\ARMCC\Bin
-C Compiler:      Armcc.exe V5.05 update 2 (build 169)
-Assembler:       Armasm.exe V5.05 update 2 (build 169)
-Linker/Locator:  ArmLink.exe V5.05 update 2 (build 169)
-Library Manager: ArmAr.exe V5.05 update 2 (build 169)
-Hex Converter:   FromElf.exe V5.05 update 2 (build 169)
-CPU DLL:         SARMCM3.DLL V5.15.0
-Dialog DLL:      DCM.DLL V1.13.2.0
-Target DLL:      Segger\JL2CM3.dll V2.99.15.0
-Dialog DLL:      TCM.DLL V1.14.5.0
+C Compiler:      Armcc.exe V5.06 update 1 (build 61)
+Assembler:       Armasm.exe V5.06 update 1 (build 61)
+Linker/Locator:  ArmLink.exe V5.06 update 1 (build 61)
+Library Manager: ArmAr.exe V5.06 update 1 (build 61)
+Hex Converter:   FromElf.exe V5.06 update 1 (build 61)
+CPU DLL:         SARMCM3.DLL V5.18
+Dialog DLL:      DARMSTM.dll V1.65.0.0
+Target DLL:      Segger\JL2CM3.dll V2.99.18.0
+Dialog DLL:      DARMSTM.dll V1.65.0.0
  
 <h2>Project:</h2>
-C:\Users\Faker\Desktop\MarineRobotV1.1程序模板\USER\USART.uvprojx
-Project File Date:  07/19/2018
+C:\Users\79230\Desktop\非标机器人程序\得科F4控制器平台(绿色双路驱动)git\USER\USART.uvprojx
+Project File Date:  11/07/2019
 
 <h2>Output:</h2>
-*** Using Compiler 'V5.05 update 2 (build 169)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
-Build target 'USART'
+*** Using Compiler 'V5.06 update 1 (build 61)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
+Rebuild target 'USART'
+compiling stm32f4xx_it.c...
+compiling beep.c...
+compiling init.c...
+compiling system_stm32f4xx.c...
+compiling key.c...
+compiling timer.c...
+compiling sensor.c...
+compiling lcd.c...
+compiling pwm.c...
+compiling servor_bc.c...
+compiling RobotInit.c...
+compiling main.c...
+compiling AD_Detection.c...
+compiling edge.c...
 compiling ysy.c...
-..\HARDWARE\BEEP\beep.h(12): warning:  #1295-D: Deprecated declaration beepoff - give arg types
-  void beepoff();
-ysy.h(22): warning:  #1-D: last line of file ends without a newline
-  void find_single();
-ysy.h(22): warning:  #1295-D: Deprecated declaration find_single - give arg types
-  void find_single();
-ysy.c(37): warning:  #940-D: missing return statement at end of non-void function "Touch"
-  }
-ysy.c(126): warning:  #223-D: function "AD_Detection" declared implicitly
-                                AD_Detection();
-ysy.c(182): warning:  #111-D: statement is unreachable
-                                
-learScreen();
-ysy.c(179): warning:  #177-D: label "end" was declared but never referenced
-                                end:
-ysy.c(199): warning:  #940-D: missing return statement at end of non-void function "select_high"
-  }
-ysy.c(210): warning:  #223-D: function "get_edge" declared implicitly
-                                if(get_edge()||mseconds()>300)  break;//处?淼?台、??缘???榭?
-ysy.c(221): warning:  #223-D: function "get_edge" declared implicitly
-                                if(get_edge()||mseconds()>400)  break;//处?淼?台、??缘???榭?
-ysy.c(232): warning:  #1-D: last line of file ends without a newline
-  }
-ysy.c: 11 warnings, 0 errors
+compiling led.c...
+compiling 24cxx.c...
+compiling compass_nst.c...
+compiling myiic.c...
+compiling delay.c...
+assembling startup_stm32f40_41xxx.s...
+compiling sys.c...
+compiling usart.c...
+compiling misc.c...
+compiling stm32f4xx_gpio.c...
+compiling stm32f4xx_syscfg.c...
+compiling stm32f4xx_usart.c...
+compiling stm32f4xx_rcc.c...
+compiling stm32f4xx_tim.c...
+compiling stm32f4xx_dma.c...
+compiling stm32f4xx_adc.c...
 linking...
-Program Size: Code=13196 RO-data=424 RW-data=1580 ZI-data=1732  
+Program Size: Code=15080 RO-data=424 RW-data=1676 ZI-data=1732  
 FromELF: creating hex file...
-"..\OBJ\MarineRobotV1.0_2017.5" - 0 Error(s), 11 Warning(s).
+"..\OBJ\MarineRobotV1.0_2017.5" - 0 Error(s), 0 Warning(s).
+
+<h2>Software Packages used:</h2>
+
+Package Vendor: Keil
+                http://www.keil.com/pack/Keil.STM32F4xx_DFP.1.0.8.pack
+                Keil.STM32F4xx_DFP.1.0.8
+                STMicroelectronics STM32F4 Series Device Support, Drivers and Examples
 
 <h2>Collection of Component include folders:</h2>
-  C:\Users\Faker\Desktop\MarineRobotV1.1程序模板\USER\RTE
-  C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.5.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include
+  .\RTE\_USART
+  C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include
 
 <h2>Collection of Component Files used:</h2>
+Build Time Elapsed:  00:00:09
 </pre>
 </body>
 </html>

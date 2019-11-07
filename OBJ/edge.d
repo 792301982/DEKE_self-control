@@ -3,7 +3,7 @@
 ..\obj\edge.o: init.h
 ..\obj\edge.o: stm32f4xx.h
 ..\obj\edge.o: ..\CORE\core_cm4.h
-..\obj\edge.o: H:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+..\obj\edge.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 ..\obj\edge.o: ..\CORE\core_cmInstr.h
 ..\obj\edge.o: ..\CORE\core_cmFunc.h
 ..\obj\edge.o: ..\CORE\core_cm4_simd.h
@@ -39,7 +39,7 @@
 ..\obj\edge.o: ..\SYSTEM\sys\sys.h
 ..\obj\edge.o: ..\SYSTEM\delay\delay.h
 ..\obj\edge.o: ..\SYSTEM\usart\usart.h
-..\obj\edge.o: H:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+..\obj\edge.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
 ..\obj\edge.o: ..\HARDWARE\LED\led.h
 ..\obj\edge.o: ..\HARDWARE\BEEP\beep.h
 ..\obj\edge.o: ..\HARDWARE\KEY\key.h
@@ -49,4 +49,6 @@
 ..\obj\edge.o: ..\HARDWARE\TIMER\timer.h
 ..\obj\edge.o: ..\HARDWARE\SERVOR_BC\servor_bc.h
 ..\obj\edge.o: ysy.h
+..\obj\edge.o: init.h
+..\obj\edge.o: edge.h
 ..\obj\edge.o: init.h
