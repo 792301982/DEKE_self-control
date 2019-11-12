@@ -1,6 +1,8 @@
 /********************************************
 * 版本:	TheMonster_1.1_2017.08.09
 *********************************************/
+
+//**********************************推棋子程序**********************************
 #include "init.h"
 #include "function.h"		//所有业务详细子程序和详细模块程序都放在function.h头文件，main.c文件主要写跑的模块程序。
 #include "ysy.h"				//2017.10
@@ -284,65 +286,47 @@ int check_edge()
 		right=DI(2);
 		if(left || right)//前铲出台
 		{
-			defend_flag=1;                 //守台标志
-			GoodMoto(-200,-200);					 //短暂倒车
-			delay_ms(100);
-
-			if(AI(2)<700 || AI(3)<700 ||AI(2) >2200 ||AI(3) >2200) defend_flag=0;
-			else  {GoodMoto(0,0);return 1;} //守敌
-			
-			//遇敌转向
-			if(turn_to_attack()==1) return 1;
-			
-			GoodMoto(-600,-600);
-			delay_ms(250);
-
-			if(left)
+			if(AI(2) >2200 || AI(3) >2200) 
 			{
-				GoodMoto(0,-800);
-			}
-			else if(right)
-			{	
-				GoodMoto(-800,0);
-			}
-			if(left && right)
+				//逃离木箱
+				GoodMoto(-600,-600);
+				delay_ms(250);
+				GoodMoto(-700,700);
 				delay_ms(400);
+			}
 			else
-				delay_ms(200);
+			{
+				if(left)
+				{
+					GoodMoto(0,-800);
+				}
+				else if(right)
+				{	
+					GoodMoto(-800,0);
+				}
+				if(left && right)
+					delay_ms(400);
+				else
+					delay_ms(200);
+			}
 		}
-
 		return 0;
 }
 
 int on_stage()
 {
-	check_edge();//检查边缘
-	if(defend_flag==1)
-	{
-		//守台
-		if(AI(2)<700 || AI(3)<700 ||AI(2) >2200 ||AI(3) >2200) defend_flag=0;
-		else  {GoodMoto(0,0);return 0;}
-	}
-	
+	check_edge();//检查边缘	
 	if(attack_flag==0)
 	{
 		GoodMoto(normal_speed,normal_speed);
-		max_speed_flag=0;
 	}
 	else
 	{
-		if(max_speed_flag>=100)   
-		{
-			GoodMoto(900,900);                                   //全速攻击速度
-		}
-		else  
-		{
-			GoodMoto(attack_speed,attack_speed);max_speed_flag+=1;
-		}
+		GoodMoto(attack_speed,attack_speed);
 	}
 	
 	attack_flag=0;
-	if(AI(2)>=attack_dis || AI(3)>=attack_dis) 
+	if(AI(2)>=attack_dis && AI(3)>=attack_dis) 
 	{
 		attack_flag=1;
 		check_edge();
@@ -365,7 +349,7 @@ int worker(void)
 		if(location_flag)
 		{
 			//擂台下
-			off_stage();
+			//off_stage();
 		}
 		else
 		{
