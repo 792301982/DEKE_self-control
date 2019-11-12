@@ -34,7 +34,7 @@ int attack_speed=700,         //速度初始值
 		normal_speed=600,
 		back_speed=-800,	
 		max_speed=900,            //全速攻击速度
-		attack_dis=800,           //台上寻敌的距离
+		attack_dis=1000,           //台上寻敌的距离
 		judge_stage_dis=1200,     //判断台上下传感器距离
 		temp,
 		t=0,
@@ -87,7 +87,7 @@ int main(void)
 			{
 				if(AI(10)>=2000) break;
 			}
-	  	up_stage();                          //单次登台
+	  	//up_stage();                          //单次登台
 			while(1)
 			{
 				//get_edge();
@@ -323,9 +323,8 @@ int on_stage()
 		if(AI(2)<700 || AI(3)<700 ||AI(2) >2200 ||AI(3) >2200) defend_flag=0;
 		else  {GoodMoto(0,0);return 0;}
 	}
-	attack_flag=0;
-	if(AI(2)>=attack_dis || AI(3)>=attack_dis) attack_flag=1;          //遇敌转向
-	if(attack_flag==0) 
+	
+	if(attack_flag==0)
 	{
 		GoodMoto(normal_speed,normal_speed);
 		max_speed_flag=0;
@@ -342,8 +341,21 @@ int on_stage()
 		}
 	}
 	
+	attack_flag=0;
+	if(AI(2)>=attack_dis || AI(3)>=attack_dis) 
+	{
+		attack_flag=1;
+		check_edge();
+	}
+	else
+	{
+		//遇敌转向
+		attack_flag=0;
+		turn_to_attack();
+	}
 	return 0;
 }
+
 int worker(void)
 {
 	while(1)

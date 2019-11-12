@@ -134,7 +134,7 @@ void up_stage(void)//上台阶段
 	ClearScreen();
 	ShowStr(2,5,"上台");
 	{
-		GoodMoto(-900,-900);
+		GoodMoto(back_speed,back_speed);
 		delay_ms(1000);
 		GoodMoto(-700,700);
 		delay_ms(400);
