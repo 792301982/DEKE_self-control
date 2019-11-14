@@ -223,8 +223,8 @@ void GoodMoto(int lspeed,int rspeed)//两路电机
 	Rs=rspeed;
 	//motor(2,lspeed);
 	//motor(3,-rspeed);
-	motor(2,-rspeed);
-	motor(3,lspeed);
+	motor(2,lspeed);
+	motor(3,-rspeed);
 }
 
 void stop()

@@ -57,7 +57,9 @@ int attack_speed=700,         //速度初始值
 		zj=0,
 		defend_flag=0,              //守台标志
 		attack_flag=0,              //攻击标志
-		max_speed_flag=0;           //全速攻击标志
+		max_speed_flag=0,           //全速攻击标志
+		ai2=0,
+		ai3=0;											//前2传感器寄存
 
 int main(void)
 {
@@ -260,15 +262,16 @@ int turn_to_attack()
 {/* 
 		遇敌返回1，未遇敌返回0
 	*/
-			if(AI(2)>=attack_dis || AI(3)>=attack_dis) return 1;
-			else if(AI(1)>= attack_dis || AI(11)>=attack_dis || AI(10)>= attack_dis || AI(9)>=attack_dis || AI(14)>=attack_dis)
+	//推棋子：增加前2 检测距离，禁用尾2
+			if(AI(2)>=600 || AI(3)>=600) return 1;
+			else if(AI(1)>= attack_dis || AI(11)>=attack_dis || AI(10)>= attack_dis || AI(9)>=attack_dis )//|| AI(14)>=attack_dis
 			{
-				GoodMoto(-700,700);
+				GoodMoto(0,500);
 				return 1;
 			}
-			else if(AI(13) >= attack_dis || AI(5) >=attack_dis || AI(6) >=attack_dis || AI(7)>= attack_dis || AI(8) >= attack_dis)
+			else if(AI(13) >= attack_dis || AI(5) >=attack_dis || AI(6) >=attack_dis || AI(7)>= attack_dis )//|| AI(8) >= attack_dis
 			{
-				GoodMoto(700,-700);
+				GoodMoto(500,0);
 				return 1;
 			}
 			else 
@@ -286,36 +289,44 @@ int check_edge()
 		right=DI(2);
 		if(left || right)//前铲出台
 		{
-			if(AI(2) >2200 || AI(3) >2200) 
+			ai2=AI(2);
+			ai3=AI(3);
+			GoodMoto(0,0);
+			delay_ms(40);
+
+			GoodMoto(-600,-600);
+			delay_ms(250);
+			
+			GoodMoto(0,0);
+			delay_ms(40);
+			if(left)
 			{
-				//逃离木箱
-				GoodMoto(-600,-600);
-				delay_ms(250);
-				GoodMoto(-700,700);
+				GoodMoto(0,-600);
+				//delay_ms(100);//
+			}
+			else if(right)
+			{	
+				GoodMoto(-600,0);
+				//delay_ms(100);
+			}
+			
+			if(left && right ||(ai2 >2200 || ai3 >2200) )//？？
+			{	//逃离木箱
+			  //GoodMoto(-500,-500)//
 				delay_ms(400);
 			}
 			else
-			{
-				if(left)
-				{
-					GoodMoto(0,-800);
-				}
-				else if(right)
-				{	
-					GoodMoto(-800,0);
-				}
-				if(left && right)
-					delay_ms(400);
-				else
-					delay_ms(200);
-			}
+				delay_ms(200);
+			
+			GoodMoto(0,0);
+			delay_ms(40);
 		}
 		return 0;
 }
 
 int on_stage()
 {
-	check_edge();//检查边缘	
+	check_edge();//检查边缘		
 	if(attack_flag==0)
 	{
 		GoodMoto(normal_speed,normal_speed);
@@ -337,6 +348,7 @@ int on_stage()
 		attack_flag=0;
 		turn_to_attack();
 	}
+	
 	return 0;
 }
 
@@ -344,17 +356,16 @@ int worker(void)
 {
 	while(1)
 	{
-		//判断台上下
-		location_flag=judge_stage();
-		if(location_flag)
-		{
-			//擂台下
-			//off_stage();
-		}
-		else
-		{
-			//擂台上
+//		//判断台上下
+//		location_flag=judge_stage();
+//		if(location_flag)
+//		{
+//			//擂台下
+//			off_stage();
+//		}
+//		else
+//		{
+//			//擂台上
 			on_stage();
-		}
 	}
 }
